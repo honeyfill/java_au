@@ -1,0 +1,15 @@
+/.idea/.gitignore
+/src/generate/.idea/.gitignore
+/.idea/description.html
+/.idea/encodings.xml
+/src/generate/generate.iml
+/generate_markup.iml
+/.idea/misc.xml
+/src/generate/.idea/misc.xml
+/.idea/modules.xml
+/src/generate/.idea/modules.xml
+/.idea/project-template.xml
+/.idea/runConfigurations.xml
+/src/generate/.idea/runConfigurations.xml
+/.idea/vcs.xml
+/src/generate/.idea/vcs.xml
