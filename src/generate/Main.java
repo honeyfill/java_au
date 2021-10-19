@@ -1,38 +1,43 @@
 package generate;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.stream.Stream;
 
 public class Main{
 
     public static void main(String[] args) throws IOException{
 
+        String source;
+        StringBuilder mdFile;
+        String inputName = "/home/honeyfill/IdeaProjects/generate_markup/src/generate/" + args[0];
+        String outName = "/home/honeyfill/IdeaProjects/generate_markup/" + args[1];
 
-        String source = "", mdFile = "";
-
-        try (Stream<String> stream = Files.lines(Paths.get(args[0]))) {
-            source = stream.toString();
-        }
-        System.out.println(source);
-        try (Stream<String> stream = Files.lines(Paths.get(args[1]))) {
-            mdFile = stream.toString();
-        }
+        source = IOUtils.readFile(inputName);
+        mdFile = new StringBuilder(IOUtils.readFile(outName));
 
 
-        SolutionFile MyFile = SolutionFile.parse(mdFile, args[2]);
+        System.out.println(args[2]);
+        SolutionFile MyFile = SolutionFile.parse(mdFile.toString(), "md"); // fix "md" problem
+
         MyFile.solutions.add(MarkDownEntity.parse(source));
-        mdFile = "";
+
+        mdFile = new StringBuilder();
+
         for (ItemEntity Ent : MyFile.solutions){
-            mdFile += Ent.toFormatted()[0];
+            mdFile.append(Ent.toFormatted()[0]);
         }
+        mdFile.append("<!---->\n\n");
         for (ItemEntity Ent : MyFile.solutions){
-            mdFile += Ent.toFormatted()[1];
+            mdFile.append(Ent.toFormatted()[1]);
         }
 
-        FileWriter MdFile = new FileWriter(args[1]);
+        System.out.println(mdFile);
 
-        MdFile.write(mdFile);
+        FileWriter MdFile = new FileWriter(outName);
+
+        MdFile.write(mdFile.toString());
+
+        MdFile.flush();
+
+        MdFile.close();
     }
 }
