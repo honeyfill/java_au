@@ -6,22 +6,22 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SolutionFileTest {
-    private static String PARSE_OLD = "+ [Merge Intervals](#merge-intervals)\n" +
+    private final String PARSE_OLD = "+ [Merge Intervals](#merge-intervals)\n" +
             "<!---->\n" +
             "## Merge Intervals\n" +
             "https://leetcode.com/problems/merge-intervals/\n" +
-            "```java\n" +
+            "```python\n" +
             "code block:\n" +
             "    privet\n" +
             "    prive\n" +
             "    privt\n" +
             "```\n";
-    private static String CODE = "Merge Intervals\n" +
-            "https://leetcode.com/problems/merge-intervals/\n" +
-            "code block:\n" +
-            "    privet\n" +
-            "    prive\n" +
-            "    privt\n";
+    private final String CODE = "Merge Intervals\n" +
+                                 "https://leetcode.com/problems/merge-intervals/\n" +
+                                 "code block:\n" +
+                                 "    privet\n" +
+                                 "    prive\n" +
+                                 "    privt\n";
 
     @org.junit.jupiter.api.Test
     void parse() {

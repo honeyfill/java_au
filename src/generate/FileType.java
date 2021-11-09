@@ -2,7 +2,7 @@ package generate;
 
 enum FileType{
     MARKDOWN("md"), HTML("html"), LATEX("LaTeX");
-    private String mark;
+    private final String mark;
     FileType(String mark){
         this.mark = mark;
     }

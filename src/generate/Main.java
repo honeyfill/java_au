@@ -8,11 +8,12 @@ public class Main{
 
         String source;
         StringBuilder mdFile;
-        String inputName = "/home/honeyfill/IdeaProjects/generate_markup/src/generate/" + args[0];
+        String inputName = "/home/honeyfill/IdeaProjects/generate_markup/" + args[0];
         String outName = "/home/honeyfill/IdeaProjects/generate_markup/" + args[1];
 
         source = IOUtils.readFile(inputName);
         mdFile = new StringBuilder(IOUtils.readFile(outName));
+        System.out.println(mdFile.toString());
 
 
         System.out.println(args[2]);
@@ -25,7 +26,7 @@ public class Main{
         for (ItemEntity Ent : MyFile.solutions){
             mdFile.append(Ent.toFormatted()[0]);
         }
-        mdFile.append("<!---->\n\n");
+        mdFile.append("<!---->\n");
         for (ItemEntity Ent : MyFile.solutions){
             mdFile.append(Ent.toFormatted()[1]);
         }

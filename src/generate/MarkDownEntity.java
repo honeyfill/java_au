@@ -2,27 +2,16 @@ package generate;
 
 import java.util.*;
 
-public class MarkDownEntity  implements ItemEntity{
-    String titleLink;
-    String codeBlock;
+public class MarkDownEntity extends BaseEntity implements ItemEntity {
 
     @Override
-    public boolean equals(Object o) {
-
-        if (this == o) {return true;}
-
-        if (o == null || getClass() != o.getClass()) {return false;}
-
-        MarkDownEntity MdEntity = (MarkDownEntity) o;
-        return titleLink.equals(MdEntity.titleLink) && codeBlock.equals(MdEntity.codeBlock);
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 
-
-    public MarkDownEntity(String titleLink, String codeBlock){
-        this.titleLink = titleLink;
-        this.codeBlock = codeBlock;
+    public MarkDownEntity(String titleLink, String codeBlock) {
+        super(titleLink, codeBlock);
     }
-
 
     @Override
     public String[] toFormatted() {
@@ -70,7 +59,7 @@ public class MarkDownEntity  implements ItemEntity{
         System.out.println(codeBlock);
         String titleTail = title.toLowerCase(Locale.ROOT).replace(" ", "-");
         String titleLink = String.format("+ [%s](#%s)\n", title, titleTail);
-        codeBlock = "## " + title + "\n" + link + "\n```java\n" + codeBlock + "```\n";
+        codeBlock = "## " + title + "\n" + link + "\n```python\n" + codeBlock + "```\n";
         return new MarkDownEntity(titleLink, codeBlock);
     }
 }
