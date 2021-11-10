@@ -13,7 +13,7 @@ public class Main{
 
         source = IOUtils.readFile(inputName);
         mdFile = new StringBuilder(IOUtils.readFile(outName));
-        System.out.println(mdFile.toString());
+        System.out.println(mdFile);
 
 
         System.out.println(args[2]);
