@@ -8,8 +8,8 @@ public class Main{
 
         String source;
         StringBuilder mdFile;
-        String inputName = "/home/honeyfill/IdeaProjects/generate_markup/src/generate/" + args[0];
-        String outName = "/home/honeyfill/IdeaProjects/generate_markup/" + args[1];
+        String inputName = "/home/honeyfill/IdeaProjects/generate_markup/src/leetcode/" + args[0];
+        String outName = "/home/honeyfill/IdeaProjects/generate_markup/src/leetcode/" + args[1];
 
         source = IOUtils.readFile(inputName);
         mdFile = new StringBuilder(IOUtils.readFile(outName));
