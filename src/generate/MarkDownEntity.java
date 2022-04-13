@@ -70,7 +70,7 @@ public class MarkDownEntity  implements ItemEntity{
         System.out.println(codeBlock);
         String titleTail = title.toLowerCase(Locale.ROOT).replace(" ", "-");
         String titleLink = String.format("+ [%s](#%s)\n", title, titleTail);
-        codeBlock = "## " + title + "\n" + link + "\n```java\n" + codeBlock + "```\n";
+        codeBlock = "## " + title + "\n" + link + "\n```java\n" + codeBlock + "\n```\n";
         return new MarkDownEntity(titleLink, codeBlock);
     }
 }
