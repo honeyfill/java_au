@@ -23,7 +23,6 @@ public class topKfreq {
                                 Collectors.counting()
                         )
                 );
-        System.out.println(pairs);
         return Arrays.stream(words) .distinct()
                 .sorted((y, x) -> compare(pairs, x, y))
                 .limit(k)
